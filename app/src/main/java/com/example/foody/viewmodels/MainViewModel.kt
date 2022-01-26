@@ -42,7 +42,7 @@ class MainViewModel @ViewModelInject constructor(
             repository.local.deleteFavoriteRecipe(favoritesEntity)
         }
 
-    private fun deleteAllFavoriteRecipes() =
+    fun deleteAllFavoriteRecipes() =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.deleteAllFavoriteRecipes()
         }
@@ -86,10 +86,11 @@ class MainViewModel @ViewModelInject constructor(
                 val response = repository.remote.searchRecipes(searchQuery)
                 searchedRecipesResponse.value = handleFoodRecipesResponse(response)
 
-                val foodRecipe = searchedRecipesResponse.value!!.data
-                if (foodRecipe != null) {
-                    offlineCacheRecipes(foodRecipe)
-                }
+                // cache the searched data
+//                val foodRecipe = searchedRecipesResponse.value!!.data
+//                if (foodRecipe != null) {
+//                    offlineCacheRecipes(foodRecipe)
+//                }
             } catch (e: Exception) {
                 searchedRecipesResponse.value = NetworkResult.Error("Recipes not found.")
             }
