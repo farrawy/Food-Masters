@@ -68,7 +68,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
                 mealTypeChipId,
                 dietTypeChip,
                 dietTypeChipId
-                // whenever we chooes one of the chips we are going to immediately save them in the global variables
+                // whenever we choose one of the chips we are going to immediately save them in the global variables
             )
             val action =
                 RecipesBottomSheetDirections.actionRecipesBottomSheetToRecipesFragment(true)
