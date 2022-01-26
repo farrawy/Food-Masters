@@ -33,7 +33,7 @@ class welcome: AppCompatActivity() {
             startActivity(intent)
         }
         Continue_welcome.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,RecipesFragment::class.java)
             startActivity(intent)
         }
 
