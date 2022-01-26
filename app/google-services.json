@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "510215611462",
+    "project_id": "food-masters-491",
+    "storage_bucket": "food-masters-491.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510215611462:android:6bbf29d91ed1b97c279647",
+        "android_client_info": {
+          "package_name": "com.example.foody"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510215611462-4rrd59shhauk4pdd8iglr4qonf6ncaa7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLnUeb2xtToUCj4pgZYgDS0EPc35elK5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510215611462-4rrd59shhauk4pdd8iglr4qonf6ncaa7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

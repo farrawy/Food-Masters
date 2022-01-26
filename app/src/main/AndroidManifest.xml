@@ -20,7 +20,7 @@
             android:label="Details"
             android:theme="@style/DetailsActivityStyle" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name="welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +28,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Login"
+            android:label="Details"
+            android:theme="@style/DetailsActivityStyle" />
+        <activity
+            android:name=".Register"
+            android:label="Details"
+            android:theme="@style/DetailsActivityStyle" />
 
         <meta-data
             android:name="preloaded_fonts"
