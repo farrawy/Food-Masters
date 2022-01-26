@@ -57,4 +57,6 @@
     <string name="healthy">Healthy</string>
     <string name="vegetarian">Vegetarian</string>
     <string name="name">Name</string>
+    <string name="save_to_favorites">Save to Favorites</string>
+    <string name="no_favorite_recipes">No Favorite Recipes</string>
 </resources>
