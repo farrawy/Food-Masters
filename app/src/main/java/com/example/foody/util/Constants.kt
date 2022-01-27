@@ -25,10 +25,9 @@ class Constants {
         const val FAVORITE_RECIPES_TABLE = "favorite_recipes_table"
 
         // Bottom Sheet and Preferences
-        const val DEFAULT_MEAL_TYPE = "drink"
+        const val DEFAULT_MEAL_TYPE = "main course"
         const val DEFAULT_DIET_TYPE = "gluten free"
         const val DEFAULT_RECIPES_NUMBER = "50"
-
         const val PREFERENCES_NAME = "foody_preferences"
         const val PREFERENCES_MEAL_TYPE = "mealType"
         const val PREFERENCES_MEAL_TYPE_ID = "mealTypeId"
