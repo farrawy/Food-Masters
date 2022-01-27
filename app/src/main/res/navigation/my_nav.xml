@@ -63,4 +63,9 @@
             android:name="result"
             app:argType="com.example.foody.models.Result" />
     </activity>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.foody.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>

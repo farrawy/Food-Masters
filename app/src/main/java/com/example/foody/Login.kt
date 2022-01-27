@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.foody.R
 import com.example.foody.ui.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
@@ -38,15 +39,15 @@ class Login: AppCompatActivity() {
         }
 
         btnsignup.setOnClickListener {
-            val intent = Intent(this,Register::class.java)
+            val intent = Intent(this, Register::class.java)
             startActivity(intent)
         }
         btnlogin2.setOnClickListener {
-            val intent1 = Intent(this,Login::class.java)
+            val intent1 = Intent(this, Login::class.java)
             startActivity((intent1))
         }
         Not_a_member_login.setOnClickListener {
-        val intent= Intent(this,Register::class.java)
+        val intent= Intent(this, Register::class.java)
             startActivity(intent);
 
         }
@@ -63,6 +64,7 @@ class Login: AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     val intent = Intent(this@Login, MainActivity::class.java)
                     startActivity(intent)
+                    Toast.makeText(this@Login,"Loging in to your Account",Toast.LENGTH_SHORT).show()
 
                 } else {
                     // If sign in fails, display a message to the user.

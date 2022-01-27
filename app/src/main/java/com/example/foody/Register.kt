@@ -3,11 +3,10 @@ package com.example.foody
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.foody.ui.MainActivity
+import com.example.foody.R
 import com.example.foody.ui.fragments.recipes.RecipesFragment
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_register.*
@@ -44,16 +43,16 @@ class Register : AppCompatActivity() {
         }
 
         Already_have_an_account_register.setOnClickListener {
-            val intent = Intent(this,Login::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
         login_button_signup.setOnClickListener {
-            val intent1 = Intent(this,Login:: class.java)
+            val intent1 = Intent(this, Login:: class.java)
             startActivity(intent1)
 
         }
         signup_button_signup.setOnClickListener {
-            val intent2 = Intent(this,Register::class.java)
+            val intent2 = Intent(this, Register::class.java)
             startActivity(intent2)
         }
     }
@@ -63,6 +62,7 @@ class Register : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val intent = Intent(this@Register, RecipesFragment::class.java)
                     startActivity(intent)
+                    Toast.makeText(this@Register,"Registering your account",Toast.LENGTH_SHORT).show()
 
                 } else {
                     Toast.makeText(this@Register,"Some Error occurred",Toast.LENGTH_SHORT).show()

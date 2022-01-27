@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.foody.ui.MainActivity
-import com.example.foody.ui.fragments.recipes.RecipesFragment
+import com.example.foody.ui.MainActivity_GeneratedInjector
 import kotlinx.android.synthetic.main.activity_welcome.*
 
 
@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_welcome.*
 class welcome: AppCompatActivity() {
     private lateinit var btnlogin: Button
     private lateinit var btnsignup: Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,17 +26,18 @@ class welcome: AppCompatActivity() {
 
 
         btnsignup.setOnClickListener {
-            val intent = Intent(this,Register::class.java)
+            val intent = Intent(this, Register::class.java)
             startActivity(intent)
         }
         btnlogin.setOnClickListener {
-            val intent = Intent(this,Login::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
         Continue_welcome.setOnClickListener {
-            val intent = Intent(this,RecipesFragment::class.java)
+            val intent = Intent(this@welcome, MainActivity::class.java)
             startActivity(intent)
         }
+
 
 
 

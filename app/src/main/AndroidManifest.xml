@@ -20,7 +20,11 @@
             android:label="Details"
             android:theme="@style/DetailsActivityStyle" />
         <activity
-            android:name="welcome"
+            android:name=".ui.MainActivity"
+            android:label="Details"
+            android:theme="@style/DetailsActivityStyle" />
+        <activity
+            android:name=".welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
