@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#43C59E</color>
     <color name="colorPrimaryDark">#43C59E</color>
-    <color name="colorAccent">#9D46FF</color>
+    <color name="colorAccent">#79e963</color>
 
     <color name="white">#FFFFFF</color>
     <color name="lightGray">#F9F9F9</color>
@@ -17,24 +17,40 @@
     <color name="green">#00C980</color>
     <color name="veryLightGreen">#0542CF9A</color>
 
+    <!-- LIGHT THEME -->
+
+    <color name="backgroundColor">@color/lightGray</color>
+    <color name="placeholderColor">@color/mediumGray</color>
+    <color name="itemColor">@color/darker</color>
+
+
     // Custom Chip Color
     <color name="checkedChipBackgroundColor">#2042CF9A</color>
     <color name="ChipBackgroundColor">@color/lightGray</color>
     <color name="checkedChipTextColor">@color/colorPrimary</color>
     <color name="chipTextColor">@color/darkGray</color>
+
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
 
-    <color name="actionBarBackgroundColor">@color/colorPrimary</color>
+    // Custom CardView Style
     <color name="strokeColor">@color/lightMediumGray</color>
     <color name="cardBackgroundColor">@color/white</color>
     <color name="cardBackgroundLightColor">#1043C59E</color>
     <color name="titleColor">@color/darker</color>
+    <color name="descriptionColor">@color/darkGray</color>
 
     <color name="statusBarColor">@color/colorPrimaryDark</color>
     <color name="contextualStatusBarColor">@color/darker</color>
     <color name="contextualActionBarColor">@color/dark</color>
+    <color name="actionBarBackgroundColor">@color/colorPrimary</color>
+
+    // Custom Bottom Navigation View Style
+    <color name="bottomNavBackground">@color/white</color>
+    <color name="bottomNavItemColor">@color/darkGray</color>
+    <color name="bottomNavCheckedItemColor">@color/colorPrimary</color>
+
 </resources>

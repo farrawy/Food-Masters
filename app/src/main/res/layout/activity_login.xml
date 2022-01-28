@@ -4,165 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper">
-
-    <!--    Your Content Here    -->
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="266dp"
-        android:layout_height="445dp"
-        android:background="@android:drawable/screen_background_light_transparent"
-        android:clickable="false"
-        android:focusable="auto"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
-
-
-    <EditText
-        android:id="@+id/password_login"
-        android:layout_width="225dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:ems="12"
-        android:inputType="textPassword"
-        android:text="Password"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/email_login"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/email_login"
-        app:layout_constraintTop_toBottomOf="@+id/email_login"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/email_login"
-        android:layout_width="225dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Email"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/signup_button_login"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="@+id/login_button_login"
-        app:layout_constraintTop_toBottomOf="@+id/login_button_login" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="47dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="32dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:srcCompat="@drawable/facebook" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="49dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:srcCompat="@drawable/twitter" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="38dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/button3"
-        android:orientation="horizontal"
-        android:overScrollMode="never"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:srcCompat="@drawable/google" />
-
-    <Button
-        android:id="@+id/login_button_login"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="116dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/button"
-        android:text="Login"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/green"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
-
-    <Button
-        android:id="@+id/signup_button_login"
-        android:layout_width="114dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/button"
-        android:backgroundTint="@color/white"
-        android:text="Sign up"
-        android:textColor="@color/black"
-        app:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.785"
-        app:strokeColor="@color/white" />
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="224dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/button"
-        android:text="Login"
-        android:textColorLink="@color/green"
-        android:textSize="18dp"
-        app:backgroundTint="@color/green"
-        app:layout_constraintEnd_toEndOf="@+id/Forget_password_login"
-        app:layout_constraintHorizontal_bias="0.99"
-        app:layout_constraintStart_toStartOf="@+id/Forget_password_login"
-        app:layout_constraintTop_toBottomOf="@+id/Forget_password_login"
-        tools:ignore="MissingConstraints" />
+    tools:context=".ui.ActivitiesPackage.Login.LoginActivity">
 
     <TextView
-        android:id="@+id/Not_a_member_login"
-        android:layout_width="154dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:text="Not a member ?"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/login_button"
-        app:layout_constraintHorizontal_bias="0.628"
-        app:layout_constraintStart_toStartOf="@+id/login_button"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
-
-    <TextView
-        android:id="@+id/Forget_password_login"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:contextClickable="true"
-        android:text="Forgot Password?"
-        android:textColor="@color/design_default_color_secondary_variant"
-        android:textColorHighlight="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/password_login"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/password_login"
-        app:layout_constraintTop_toBottomOf="@+id/password_login"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="256dp"
+        android:text="This is a Login Screen."
+        android:textColor="@color/titleColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.284" />
 </androidx.constraintlayout.widget.ConstraintLayout>
