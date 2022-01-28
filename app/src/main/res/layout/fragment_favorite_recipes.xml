@@ -54,10 +54,10 @@
 
         <TextView
             android:id="@+id/no_data_textView"
+            viewVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            viewVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:alpha="0.5"
             android:text="@string/no_favorite_recipes"
             android:textSize="18sp"

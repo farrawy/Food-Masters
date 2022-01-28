@@ -10,8 +10,9 @@
       android:id="@+id/sign_up_btn"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginTop="88dp"
+      android:layout_marginTop="56dp"
       android:text="Sign Up"
+      android:textColor="@color/white"
       app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
@@ -34,13 +35,13 @@
       android:id="@+id/editTextTextEmailAddress"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="76dp"
+      android:layout_marginTop="48dp"
       android:ems="15"
-      android:textSize="20sp"
       android:hint="Email"
       android:inputType="textEmailAddress"
+      android:textSize="20sp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
+      app:layout_constraintHorizontal_bias="0.491"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -48,11 +49,11 @@
       android:id="@+id/editTextTextPassword"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="56dp"
+      android:layout_marginTop="50dp"
       android:ems="15"
-      android:textSize="20sp"
       android:hint="Password"
       android:inputType="textPassword"
+      android:textSize="20sp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
@@ -62,12 +63,11 @@
       android:id="@+id/textView8"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="200dp"
+      android:layout_marginStart="196dp"
+      android:layout_marginTop="16dp"
       android:text="Already a member? "
-      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="@+id/sign_up_btn"
-      app:layout_constraintTop_toBottomOf="@+id/sign_up_btn"
-      app:layout_constraintVertical_bias="0.294" />
+      app:layout_constraintTop_toBottomOf="@+id/sign_up_btn" />
 
   <TextView
       android:id="@+id/register_login_textView"
@@ -77,4 +77,51 @@
       app:layout_constraintBottom_toBottomOf="@+id/textView8"
       app:layout_constraintStart_toEndOf="@+id/textView8"
       app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+  <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/google_image"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_marginStart="100dp"
+      android:src="@drawable/googleplus"
+      app:layout_constraintBottom_toBottomOf="@+id/facebook_image"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/facebook_image" />
+
+  <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/facebook_image"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginEnd="24dp"
+      android:src="@drawable/facebook"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/twitter_image"
+      app:layout_constraintHorizontal_bias="0.529"
+      app:layout_constraintStart_toEndOf="@+id/google_image"
+      app:layout_constraintTop_toBottomOf="@+id/textView9"
+      app:layout_constraintVertical_bias="0.1" />
+
+  <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/twitter_image"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_marginEnd="100dp"
+      android:src="@drawable/twitter"
+      app:layout_constraintBottom_toBottomOf="@+id/facebook_image"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/facebook_image"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/textView9"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="OR"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
