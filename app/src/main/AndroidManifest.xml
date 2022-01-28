@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.foody">
+    package="com.example.foody" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,14 +14,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/SplashScreenStyle"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".ui.ActivitiesPackage.Register.RegisterActivity"
+            android:exported="false" />
+        <activity android:name=".ui.ActivitiesPackage.Login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.DetailsActivity"
             android:label="Details"
             android:theme="@style/DetailsActivityStyle" />
         <activity
-            android:name=".ui.MainActivity"
-            android:exported="true">
+            android:name=".ui.ActivitiesPackage.Welcome.WelcomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
