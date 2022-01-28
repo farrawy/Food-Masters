@@ -17,19 +17,26 @@
         android:usesCleartextTraffic="true" >
         <activity
             android:name=".ui.ActivitiesPackage.Register.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
+
         <activity android:name=".ui.ActivitiesPackage.Login.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
+
         <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.DetailsActivity"
             android:label="Details"
-            android:theme="@style/DetailsActivityStyle" />
+             />
+
         <activity
             android:name=".ui.ActivitiesPackage.Welcome.WelcomeActivity"
-            android:exported="true" >
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
