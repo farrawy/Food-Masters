@@ -4,54 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="@drawable/wallpaper"
     tools:context=".ui.ActivitiesPackage.Welcome.WelcomeActivity">
 
     <Button
-        android:id="@+id/welcome_login_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="120dp"
-        android:text="Login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_textView" />
-
-    <Button
-        android:id="@+id/welcome_sign_up_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Register"
-        app:layout_constraintBottom_toBottomOf="@+id/welcome_login_btn"
-        app:layout_constraintStart_toEndOf="@+id/welcome_login_btn"
-        app:layout_constraintTop_toTopOf="@+id/welcome_login_btn" />
+        android:id="@+id/signup_button_welcome"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button2"
+        android:text="Sign Up"
+        android:textSize="24sp"
+        app:backgroundTint="@color/green"
+        app:iconPadding="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/login_button_welcome"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/login_button_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/login_button_welcome"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/welcome_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:text="@string/welcome"
-        android:textSize="32sp"
-        android:textColor="@color/titleColor"
+        android:id="@+id/welcometext"
+        android:layout_width="221dp"
+        android:layout_height="122dp"
+        android:text="cooking a delicious food easily"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textDirection="firstStrongRtl"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <TextView
+        android:id="@+id/welcometext2"
+        android:layout_width="228dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="124dp"
+        android:text="Discover more than 1200 food recipes in your hands and cooking it easily"
+        android:textColor="#F1ECEC"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcometext"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/login_button_welcome"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button"
+        android:text="login"
+        android:textColorHighlight="@color/green"
+        android:textSize="24sp"
+        app:backgroundTint="@color/green"
+        app:iconTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcometext2"
+        app:layout_constraintVertical_bias="0.239"
+        app:strokeColor="@color/green" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="108dp"
         android:text="Continue without"
-        android:textSize="18sp"
         android:textColor="@color/titleColor"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_login_btn"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintStart_toStartOf="@+id/signup_button_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/signup_button_welcome" />
 
     <TextView
         android:id="@+id/welcome_signing_up"
@@ -59,10 +91,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="signing up"
-        android:textStyle="bold"
         android:textColor="@color/green"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="@+id/signup_button_welcome"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.0" />
