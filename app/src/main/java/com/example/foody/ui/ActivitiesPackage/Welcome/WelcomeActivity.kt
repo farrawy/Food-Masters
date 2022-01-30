@@ -14,10 +14,11 @@ class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_welcome)
 
-        val welcome_login_btn = findViewById<Button>(R.id.welcome_login_btn)
-        val welcome_sign_up_btn = findViewById<Button>(R.id.welcome_sign_up_btn)
+        val welcome_login_btn = findViewById<Button>(R.id.login_button_welcome)
+        val welcome_sign_up_btn = findViewById<Button>(R.id.signup_button_welcome)
         val welcome_signing_up = findViewById<TextView>(R.id.welcome_signing_up)
 
         welcome_login_btn.setOnClickListener{
