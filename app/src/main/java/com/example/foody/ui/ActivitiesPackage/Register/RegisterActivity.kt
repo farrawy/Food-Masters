@@ -67,10 +67,11 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         sign_up_btn.setOnClickListener {
+            val name = edtname.text.toString()
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
 
-            signup(email,password)
+            signup(email,password,name)
         }
 
         register_login_textView.setOnClickListener{
@@ -90,7 +91,7 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
     }
-    private fun signup(email :String,password:String){
+    private fun signup(email :String,password:String,name:String){
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -99,7 +100,8 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(this@RegisterActivity,"Registering your account", Toast.LENGTH_SHORT).show()
 
                 } else {
-                    Toast.makeText(this@RegisterActivity,"Some Error occurred", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, "Minimum 1 UpperCase , 1 Lowercase and minimum 6 numbers",Toast.LENGTH_SHORT).show()
+
 
                 }
             }

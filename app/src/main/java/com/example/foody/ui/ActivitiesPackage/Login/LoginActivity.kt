@@ -87,11 +87,11 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent)
-                    Toast.makeText(this@LoginActivity,"Loging in to your Account", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity,"Logging  in to your Account", Toast.LENGTH_SHORT).show()
 
                 } else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(this@LoginActivity, "User does not exsit", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Invalid Email or Password", Toast.LENGTH_SHORT).show()
                 }
             }
 
