@@ -34,6 +34,7 @@
       android:inputType="textEmailAddress"
       android:textSize="20sp"
       app:layout_constraintEnd_toEndOf="@+id/signup_button_signup"
+      app:layout_constraintHorizontal_bias="0.396"
       app:layout_constraintStart_toStartOf="@+id/login_button_signup"
       app:layout_constraintTop_toBottomOf="@+id/signup_button_signup" />
 
@@ -71,8 +72,9 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="92dp"
       android:text="Already a member? "
+      android:textSize="18sp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.748"
+      app:layout_constraintHorizontal_bias="0.691"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/password_register" />
 
@@ -82,9 +84,11 @@
       android:layout_height="wrap_content"
       android:text="Login"
       android:textColor="@color/colorPrimaryDark"
+      android:textSize="18sp"
       app:layout_constraintBottom_toBottomOf="@+id/textView8"
       app:layout_constraintStart_toEndOf="@+id/textView8"
-      app:layout_constraintTop_toTopOf="@+id/textView8" />
+      app:layout_constraintTop_toTopOf="@+id/textView8"
+      app:layout_constraintVertical_bias="0.0" />
 
   <de.hdodenhof.circleimageview.CircleImageView
       android:id="@+id/google_image"
@@ -101,12 +105,12 @@
       android:layout_width="60dp"
       android:layout_height="60dp"
       android:layout_marginStart="24dp"
-      android:layout_marginTop="25dp"
+      android:layout_marginTop="15dp"
       android:layout_marginEnd="24dp"
       android:src="@drawable/facebook"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toStartOf="@+id/twitter_image"
-      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintHorizontal_bias="0.529"
       app:layout_constraintStart_toEndOf="@+id/google_image"
       app:layout_constraintTop_toBottomOf="@+id/textView9"
       app:layout_constraintVertical_bias="0.0" />
@@ -136,10 +140,10 @@
 
   <Button
       android:id="@+id/login_button_signup"
-      android:layout_width="162dp"
-      android:layout_height="52dp"
+      android:layout_width="155dp"
+      android:layout_height="56dp"
 
-      android:layout_marginStart="36dp"
+      android:layout_marginStart="32dp"
       android:layout_marginTop="50dp"
       android:background="@drawable/button"
       android:text="Login"
@@ -150,23 +154,21 @@
       app:layout_constraintBottom_toTopOf="@+id/Name_register"
       app:layout_constraintStart_toStartOf="@+id/view"
       app:layout_constraintTop_toTopOf="@+id/view"
-      app:layout_constraintVertical_bias="0.0" />
+      app:layout_constraintVertical_bias="0.279" />
 
   <Button
       android:id="@+id/signup_button_signup"
-      android:layout_width="162dp"
-      android:layout_height="52dp"
-      android:layout_marginTop="48dp"
+      android:layout_width="161dp"
+      android:layout_height="58dp"
+      android:layout_marginTop="68dp"
 
-      android:layout_marginEnd="36dp"
-      android:layout_marginBottom="15dp"
+      android:layout_marginEnd="44dp"
       android:background="@drawable/button"
       android:text="Sign up"
       android:textColor="@color/ChipBackgroundColor"
       app:backgroundTint="@color/green"
       app:layout_constraintEnd_toEndOf="@+id/view"
-      app:layout_constraintTop_toTopOf="@+id/view"
-      app:layout_constraintVertical_bias="0.0" />
+      app:layout_constraintTop_toTopOf="@+id/view" />
 
   <Button
       android:id="@+id/signup_button"
