@@ -100,7 +100,7 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(this@RegisterActivity,"Registering your account", Toast.LENGTH_SHORT).show()
 
                 } else {
-                    Toast.makeText(this@RegisterActivity, "Minimum 1 UpperCase , 1 Lowercase and minimum 6 numbers",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, "Password should be at least 8 characters ",Toast.LENGTH_SHORT).show()
 
 
                 }
