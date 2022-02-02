@@ -50,9 +50,7 @@ class RegisterActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-        val provider = OAuthProvider.newBuilder("twitter.com")
-        // Target specific email with login hint.
-        provider.addCustomParameter("lang", "fr");
+
 
 
 
@@ -124,7 +122,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun signup2() {
         val signUpIntent = googleSignInClient.signInIntent
-        startActivityForResult(signUpIntent, RC_SIGN_IN)
+        startActivityForResult(signUpIntent,RC_SIGN_IN)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
