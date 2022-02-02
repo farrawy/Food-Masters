@@ -25,6 +25,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
+
     private lateinit var googleSignInClient: GoogleSignInClient
     private var RC_SIGN_IN = 999
     private lateinit var edtEmail: EditText
@@ -38,6 +39,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_login)
+        supportActionBar?.hide()
+
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))

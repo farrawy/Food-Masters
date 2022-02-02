@@ -15,6 +15,8 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_welcome)
+        supportActionBar?.hide()
+
 
         val welcome_login_btn = findViewById<Button>(R.id.login_button_welcome)
         val welcome_sign_up_btn = findViewById<Button>(R.id.signup_button_welcome)
