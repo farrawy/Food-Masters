@@ -62,4 +62,10 @@
     <string name="delete_favorite_recipe_menu">Delete Favorite Recipe Menu</string>
     <string name="delete_all">Delete All</string>
     <string name="title_activity_login">LoginActivity</string>
+
+    <string name="facebook_app_id">1234</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
+
+
 </resources>

@@ -19,6 +19,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_register.*
+import com.google.firebase.auth.OAuthProvider
+
+
+
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -44,6 +48,9 @@ class RegisterActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
+        val provider = OAuthProvider.newBuilder("twitter.com")
+        // Target specific email with login hint.
+        provider.addCustomParameter("lang", "fr");
 
 
 
@@ -61,6 +68,11 @@ class RegisterActivity : AppCompatActivity() {
         val sign_up_btn = findViewById<Button>(R.id.signup_button)
         val register_login_textView = findViewById<TextView>(R.id.register_login_textView)
         val google_signup = findViewById<CircleImageView>(R.id.google_image)
+        val facebook_signup = findViewById<CircleImageView>(R.id.facebook_image)
+        val twitter_signup = findViewById<CircleImageView>(R.id.twitter_image)
+
+
+
 
         google_signup.setOnClickListener{
             signup2()
@@ -91,6 +103,7 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
     }
+
     private fun signup(email :String,password:String,name:String){
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
@@ -155,5 +168,6 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
     }
+
 
 }
