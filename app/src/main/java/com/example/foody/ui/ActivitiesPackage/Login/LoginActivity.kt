@@ -1,12 +1,16 @@
 package com.example.foody.ui.ActivitiesPackage.Login
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.foody.R
 import com.example.foody.ui.ActivitiesPackage.Register.RegisterActivity
 import com.example.foody.ui.MainActivity
@@ -30,11 +34,12 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var btnsignup:Button
     private lateinit var btnlogin2:Button
     private lateinit var mAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_login)
-        supportActionBar?.hide()
+        val hide = supportActionBar?.hide()
 
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -52,9 +57,26 @@ class LoginActivity : AppCompatActivity() {
         btnsignup = findViewById(R.id.signup_button_login)
         btnlogin2 = findViewById(R.id.login_button_login)
 
+        val forget_passowrd = findViewById<TextView>(R.id.Forget_password_login)
+
         val google_signup = findViewById<CircleImageView>(R.id.google_image)
         google_signup.setOnClickListener{
             logingoogle()
+        }
+
+        forget_passowrd.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Forgot Password")
+            val view = layoutInflater.inflate(R.layout.dialog_forgot_password,null)
+            val username = view.findViewById<EditText>(R.id.et_username)
+            builder.setView(view)
+            builder.setPositiveButton("Reset",DialogInterface.OnClickListener { _, _ ->
+                forgot_password(username)
+            })
+            builder.setNegativeButton("close",DialogInterface.OnClickListener { _, _ ->  })
+            builder.show()
+
+
         }
 
         btnlogin.setOnClickListener {
@@ -83,6 +105,26 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+    private fun forgot_password(username:EditText){
+        if (username.text.toString().isEmpty()){
+            return
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(username.text.toString()).matches()){
+            return
+        }
+        mAuth.sendPasswordResetEmail(username.text.toString())
+            .addOnCompleteListener{ task ->
+                if (task.isSuccessful){
+                    Toast.makeText(this,"Email sent",Toast.LENGTH_SHORT).show()
+
+                }
+                else{
+                    Toast.makeText(this,"Email not registered",Toast.LENGTH_SHORT).show()
+                }
+            }
+
+    }
+
     private fun login(email: String,password :String){
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
