@@ -10,7 +10,7 @@
 
   <View
       android:id="@+id/view"
-      android:layout_width="380dp"
+      android:layout_width="350dp"
       android:layout_height="650dp"
       android:background="@drawable/login_signup_bg"
       android:clickable="false"
@@ -18,7 +18,7 @@
       android:visibility="visible"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.483"
+      app:layout_constraintHorizontal_bias="0.442"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.493"
@@ -26,9 +26,9 @@
 
   <EditText
       android:id="@+id/Name_register"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="48dp"
+      android:layout_width="301dp"
+      android:layout_height="44dp"
+      android:layout_marginTop="50dp"
       android:ems="15"
       android:textColorHint="@color/mediumGray"
       android:hint="Name"
@@ -41,32 +41,30 @@
 
   <EditText
       android:id="@+id/email_register"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="50dp"
+      android:layout_width="301dp"
+      android:layout_height="44dp"
+      android:layout_marginTop="25dp"
       android:ems="15"
-      android:textColorHint="@color/mediumGray"
       android:hint="Email"
       android:inputType="textEmailAddress"
+      android:textColorHint="@color/mediumGray"
       android:textSize="20sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.491"
-      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="@+id/Name_register"
+      app:layout_constraintStart_toStartOf="@+id/Name_register"
       app:layout_constraintTop_toBottomOf="@+id/Name_register" />
 
   <EditText
       android:id="@+id/password_register"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="50dp"
+      android:layout_width="301dp"
+      android:layout_height="44dp"
+      android:layout_marginTop="25dp"
       android:ems="15"
       android:hint="Password"
       android:inputType="textPassword"
       android:textColorHint="@color/mediumGray"
       android:textSize="20sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.491"
-      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="@+id/email_register"
+      app:layout_constraintStart_toStartOf="@+id/email_register"
       app:layout_constraintTop_toBottomOf="@+id/email_register" />
 
   <TextView
@@ -77,22 +75,23 @@
       android:text="Already a member? "
       android:textColor="@color/lightGray"
       android:textSize="18sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.691"
-      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="@+id/signup_button"
+      app:layout_constraintHorizontal_bias="0.608"
+      app:layout_constraintStart_toStartOf="@+id/signup_button"
       app:layout_constraintTop_toBottomOf="@+id/signup_button" />
 
   <TextView
       android:id="@+id/register_login_textView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
       android:text="Login"
       android:textColor="@color/colorPrimaryDark"
       android:textSize="18sp"
-      app:layout_constraintBottom_toBottomOf="@+id/textView8"
+      app:layout_constraintEnd_toEndOf="@+id/signup_button"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toEndOf="@+id/textView8"
-      app:layout_constraintTop_toTopOf="@+id/textView8"
-      app:layout_constraintVertical_bias="0.0" />
+      app:layout_constraintTop_toTopOf="@+id/textView8" />
 
   <de.hdodenhof.circleimageview.CircleImageView
       android:id="@+id/google_image"
@@ -112,12 +111,10 @@
       android:layout_marginTop="15dp"
       android:layout_marginEnd="24dp"
       android:src="@drawable/facebook"
-      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toStartOf="@+id/twitter_image"
       app:layout_constraintHorizontal_bias="0.529"
       app:layout_constraintStart_toEndOf="@+id/google_image"
-      app:layout_constraintTop_toBottomOf="@+id/textView9"
-      app:layout_constraintVertical_bias="0.0" />
+      app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
   <de.hdodenhof.circleimageview.CircleImageView
       android:id="@+id/twitter_image"
@@ -139,7 +136,8 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.498"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textView8" />
+      app:layout_constraintTop_toBottomOf="@+id/textView8"
+      tools:ignore="TextContrastCheck" />
 
 
   <Button
@@ -165,7 +163,6 @@
       android:layout_width="161dp"
       android:layout_height="58dp"
       android:layout_marginTop="68dp"
-
       android:layout_marginEnd="44dp"
       android:background="@drawable/button"
       android:text="Sign up"
@@ -178,11 +175,10 @@
       android:id="@+id/signup_button"
       android:layout_width="0dp"
       android:layout_height="55dp"
-      android:layout_marginTop="20dp"
+      android:layout_marginTop="50dp"
       android:background="@drawable/button"
       android:text="Sign Up"
-      android:textStyle="bold"
-      app:backgroundTint="@color/green"
+      android:textColor="@color/white"
       app:layout_constraintEnd_toEndOf="@+id/password_register"
       app:layout_constraintStart_toStartOf="@+id/password_register"
       app:layout_constraintTop_toBottomOf="@+id/password_register" />
