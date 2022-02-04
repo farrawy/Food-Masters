@@ -8,7 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import com.example.foody.R
+import com.example.foody.databinding.ActivityMainBinding
 import com.example.foody.ui.ActivitiesPackage.Login.LoginActivity
 import com.example.foody.ui.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -20,8 +22,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_register.*
 import com.google.firebase.auth.OAuthProvider
-
-
+import com.twitter.sdk.android.core.TwitterAuthConfig
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -29,6 +30,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var callbackMainBinding: ActivityMainBinding
     private lateinit var edtEmail: EditText
     private var RC_SIGN_IN = 999
     private lateinit var edtPassword: EditText
@@ -70,6 +72,8 @@ class RegisterActivity : AppCompatActivity() {
         val google_signup = findViewById<CircleImageView>(R.id.google_image)
         val facebook_signup = findViewById<CircleImageView>(R.id.facebook_image)
         val twitter_signup = findViewById<CircleImageView>(R.id.twitter_image)
+
+        
 
 
 
