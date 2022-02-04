@@ -62,7 +62,7 @@ class OverviewFragment : Fragment() {
 
         // Healthy Checkmarks
         if(myBundle?.veryHealthy == true) {
-            view.healty_imageView.setColorFilter((ContextCompat.getColor(requireContext(), R.color.green)))
+            view.healthy_imageView.setColorFilter((ContextCompat.getColor(requireContext(), R.color.green)))
             view.healthy_textView.setTextColor((ContextCompat.getColor(requireContext(), R.color.green)))
         }
 
