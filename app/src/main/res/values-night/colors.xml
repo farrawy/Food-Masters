@@ -22,6 +22,7 @@
     <color name="backgroundColor">@color/dark</color>
     <color name="placeholderColor">@color/darker</color>
     <color name="itemColor">@color/mediumGray</color>
+    <color name="navigationBarColor">@color/statusBarColor</color>
 
 
     // Custom Chip Color

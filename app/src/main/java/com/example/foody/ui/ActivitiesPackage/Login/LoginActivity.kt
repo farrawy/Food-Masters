@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.AppTheme)
+        setTheme(R.style.WelcomeActivityStyle)
         setContentView(R.layout.activity_login)
         val hide = supportActionBar?.hide()
 

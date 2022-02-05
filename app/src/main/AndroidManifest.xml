@@ -5,10 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
-
-
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -26,6 +22,7 @@
 
         <activity android:name=".ui.ActivitiesPackage.Login.LoginActivity"
             android:exported="false"
+
             />
 
         <activity
@@ -73,12 +70,6 @@
         <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
 
     </application>
-
-
-
-
-
-
 
 
     </manifest>

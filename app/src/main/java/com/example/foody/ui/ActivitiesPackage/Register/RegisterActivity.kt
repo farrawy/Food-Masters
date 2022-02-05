@@ -38,7 +38,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var edtname: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.AppTheme)
+        setTheme(R.style.WelcomeActivityStyle)
         setContentView(R.layout.activity_register)
         supportActionBar?.hide()
 
