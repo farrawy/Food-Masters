@@ -28,11 +28,20 @@
         <entry key="..\:/Users/Sayed Khsraw Sadat/Desktop/Food-Masters/app/src/main/res/layout/fragment_recipes.xml" value="0.10461956521739131" />
         <entry key="..\:/Users/Sayed Khsraw Sadat/Desktop/Food-Masters/app/src/main/res/layout/main_page.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sayed Khsraw Sadat/Desktop/Food-Masters/app/src/main/res/layout/recipes_row_layout.xml" value="0.10461956521739131" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/drawable/custom_button.xml" value="0.21822916666666667" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21822916666666667" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.21822916666666667" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/activity_add_button.xml" value="0.20208333333333334" />
         <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
         <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/activity_welcome.xml" value="0.33" />
         <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/favorite_recipes_row_layout.xml" value="0.33" />
         <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.34479166666666666" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/fragment_grocery.xml" value="0.33" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/fragment_recipes.xml" value="0.34479166666666666" />
+        <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/groceryitem.xml" value="0.18854166666666666" />
         <entry key="..\:/dumbcommits/Food-Masters/app/src/main/res/layout/recipes_row_layout.xml" value="0.34479166666666666" />
       </map>
     </option>

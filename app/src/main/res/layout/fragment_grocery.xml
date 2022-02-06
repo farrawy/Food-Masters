@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
-    tools:context="ui.fragments.grocery.GroceryFragment">
+    tools:context=".ui.fragments.grocery.GroceryFragment"
+    android:background="@color/backgroundColor">
 
-    <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toBottomOf="@+id/eksik_title" />
 
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/grocery_listView"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/eksik_title"
+        android:layout_width="188dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header" />
+        android:layout_marginStart="1dp"
+        android:hint="Enter a grocery"
+        android:textColorHint="@color/titleColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="+"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/eksik_title"
+        app:layout_constraintStart_toEndOf="@+id/eksik_title"
+        app:layout_constraintTop_toTopOf="@+id/eksik_title" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:textColor="@color/white"
+        android:text="Delete done"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAdd"
+        app:layout_constraintTop_toTopOf="@+id/btnAdd" />
+</androidx.constraintlayout.widget.ConstraintLayout>

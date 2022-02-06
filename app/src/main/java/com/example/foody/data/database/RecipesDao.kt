@@ -5,7 +5,7 @@ import com.example.foody.data.database.entities.FavoritesEntity
 import com.example.foody.data.database.entities.RecipesEntity
 import kotlinx.coroutines.flow.Flow
 
-@Dao
+@Dao //Data Access Object
 interface RecipesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

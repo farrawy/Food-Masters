@@ -18,24 +18,29 @@
         android:background="@color/backgroundColor"
         tools:context=".ui.fragments.recipes.RecipesFragment">
 
-        <!--        <include-->
-        <!--            android:id="@+id/news_title"-->
-        <!--            layout="@layout/main_page"-->
-        <!--            android:layout_width="393dp"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+        <TextView
+            android:id="@+id/results"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Showing results from "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.todkars.shimmer.ShimmerRecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="8dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/results"
             app:shimmer_recycler_item_count="3"
             app:shimmer_recycler_layout="@layout/placeholder_row_layout"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -85,6 +90,8 @@
             app:layout_constraintEnd_toEndOf="@+id/error_imageView"
             app:layout_constraintStart_toStartOf="@+id/error_imageView"
             app:layout_constraintTop_toBottomOf="@+id/error_imageView" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

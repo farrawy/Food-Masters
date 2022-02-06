@@ -6,11 +6,15 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.example.foody.data.database.entities.RecipesEntity
 import com.example.foody.models.FoodRecipe
+import com.example.foody.util.Constants
 import com.example.foody.util.NetworkResult
 
 class RecipesBinding {
 
     companion object {
+
+
+
 
         @BindingAdapter("readApiResponse", "readDatabase", requireAll = true)
         @JvmStatic

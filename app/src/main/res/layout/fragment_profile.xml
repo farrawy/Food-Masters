@@ -1,295 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context="ui.fragments.profile.ProfileFragment">
+    tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="138dp"
+        android:layout_height="131dp"
+
+        android:layout_below="@+id/edit_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".MainActivity">
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:id="@+id/profilepic"
-            android:layout_width="138dp"
-            android:layout_height="131dp"
-            android:layout_below="@+id/editinfo"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="70dp"
-            app:srcCompat="@drawable/profilepic"
-            tools:ignore="ContentDescription" />
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_pic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@android:string/unknownName"
+        android:textAlignment="center"
+        android:textColor="@color/titleColor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/profile_pic"
+        app:layout_constraintStart_toStartOf="@+id/profile_pic"
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profilepic"
-            android:layout_centerHorizontal="true"
-            android:text="@android:string/unknownName"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="25sp" />
+    <ImageView
+        android:id="@+id/edit_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:id="@+id/editinfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="350dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:srcCompat="@android:drawable/ic_menu_edit"
-            tools:ignore="ContentDescription" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardff"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_below="@+id/user_name"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        app:cardBackgroundColor="#42CF9A"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/user_name"
+        app:layout_constraintStart_toStartOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_name">
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="Profile"
-            android:textSize="24sp" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardff"
+        <RelativeLayout
+            android:id="@+id/cardf"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:layout_below="@+id/textView"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="40dp"
-            app:cardBackgroundColor="#42CF9A"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="25dp">
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:id="@+id/cardf"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="9dp"
+                android:drawableLeft="@drawable/food"
+                android:drawablePadding="2dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:padding="5dp"
+                android:text="Food"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="106dp"
-                    android:layout_marginBottom="38dp"
-                    android:layout_toStartOf="@+id/view"
-                    android:drawableLeft="@drawable/food"
-                    android:drawablePadding="2dp"
-                    android:fontFamily="sans-serif-condensed-medium"
-                    android:padding="5dp"
-                    android:text="Food"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+            <TextView
+                android:id="@+id/cal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView4"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif-black"
+                android:padding="2dp"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView4"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="-2dp"
-                    android:fontFamily="sans-serif-black"
-                    android:text="0/1644 Cal"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+            <Button
+                android:id="@+id/button_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="119dp"
+                android:layout_marginEnd="24dp"
+                android:layout_toEndOf="@+id/textView4"
+                android:background="@drawable/custom_button"
+                android:text="View"
+                android:textColor="@color/white" />
 
-                <Button
-                    android:id="@+id/view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="31dp"
-                    android:layout_marginBottom="22dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:text="View"
-                    android:textColor="#000000" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardw"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_below="@+id/cardff"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        app:cardBackgroundColor="#42CF9A"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardff"
+        app:layout_constraintStart_toStartOf="@+id/cardff"
+        app:layout_constraintTop_toBottomOf="@+id/cardff">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardw"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:layout_below="@+id/cardff"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="40dp"
-            app:cardBackgroundColor="#42CF9A"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="25dp">
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="106dp"
+                android:drawableLeft="@drawable/drop"
+                android:drawablePadding="2dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:padding="5dp"
+                android:text="water"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/glasses_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView5"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="106dp"
-                    android:layout_marginBottom="38dp"
-                    android:drawableLeft="@drawable/drop"
-                    android:drawablePadding="2dp"
-                    android:fontFamily="sans-serif-condensed-medium"
-                    android:padding="5dp"
-                    android:text="water"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView5"
+                android:layout_alignStart="@+id/textView5"
+                android:layout_alignEnd="@+id/textView5"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="-4dp"
+                android:fontFamily="sans-serif-black"
+                android:text="glasses"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
+            <Button
+                android:id="@+id/button_inc"
+                style="@android:style/Widget.DeviceDefault.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="22dp"
+                android:background="@drawable/custom_button"
+                android:text="+"
+                android:textColor="@color/white" />
 
-                <TextView
-                    android:id="@+id/number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView5"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="-2dp"
-                    android:fontFamily="sans-serif-black"
-                    android:text="3"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+            <Button
+                android:id="@+id/button_dec"
+                style="@android:style/Widget.DeviceDefault.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginBottom="22dp"
+                android:layout_toStartOf="@+id/button_inc"
+                android:background="@drawable/custom_button"
+                android:text="-"
+                android:textColor="@color/white" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView5"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginTop="-3dp"
-                    android:layout_toEndOf="@+id/number"
-                    android:fontFamily="sans-serif-black"
-                    android:text="glasses"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
-                <Button
-                    android:id="@+id/inc"
-                    style="@android:style/Widget.DeviceDefault.Button.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="31dp"
-                    android:layout_marginBottom="22dp"
-                    android:backgroundTint="@color/white"
-                    android:text="+"
-                    android:textColor="#000000" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardwe"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_below="@+id/cardw"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        app:cardBackgroundColor="#42CF9A"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardw"
+        app:layout_constraintStart_toStartOf="@+id/cardw"
+        app:layout_constraintTop_toBottomOf="@+id/cardw">
 
-                <Button
-                    android:id="@+id/dec"
-                    style="@android:style/Widget.DeviceDefault.Button.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="26dp"
-                    android:layout_marginRight="70dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_toStartOf="@+id/inc"
-                    android:backgroundTint="@color/white"
-                    android:text="-"
-                    android:textColor="#000000" />
-
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardwe"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:layout_below="@+id/cardw"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="40dp"
-            app:cardBackgroundColor="#42CF9A"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="25dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
-                <TextView
-                    android:id="@+id/weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="11dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="211dp"
-                    android:layout_marginBottom="38dp"
-                    android:drawableLeft="@drawable/weight"
-                    android:drawablePadding="3dp"
-                    android:fontFamily="sans-serif-condensed-medium"
-                    android:padding="5dp"
-                    android:text="Weight"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="106dp"
+                android:drawableLeft="@drawable/weight"
+                android:drawablePadding="3dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:padding="5dp"
+                android:text="Weight"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/weight"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="-2dp"
-                    android:fontFamily="sans-serif-black"
-                    android:text="190 Kg"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+            <TextView
+                android:id="@+id/weight_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/weight"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="sans-serif-black"
+                android:padding="2dp"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
 
-                <Button
-                    android:id="@+id/add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="93dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="31dp"
-                    android:layout_marginBottom="22dp"
-                    android:layout_toEndOf="@+id/weight"
-                    android:backgroundTint="#FFFFFF"
-                    android:text="Add"
-                    android:textColor="#000000" />
+            <Button
+                android:id="@+id/button_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/custom_button"
+                android:text="Add"
+                android:textColor="@color/white" />
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 
-    </RelativeLayout>
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

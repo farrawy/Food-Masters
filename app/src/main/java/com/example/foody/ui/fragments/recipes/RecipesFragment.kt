@@ -1,8 +1,10 @@
 package com.example.foody.ui.fragments.recipes
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
@@ -16,6 +18,7 @@ import com.example.foody.viewmodels.MainViewModel
 import com.example.foody.R
 import com.example.foody.adapters.RecipesAdapter
 import com.example.foody.databinding.FragmentRecipesBinding
+import com.example.foody.util.Constants.Companion.DEFAULT_MEAL_TYPE
 import com.example.foody.util.NetworkListener
 import com.example.foody.util.NetworkResult
 import com.example.foody.util.observeOnce
@@ -30,6 +33,8 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
+    private val mealType = DEFAULT_MEAL_TYPE
+
     private val args by navArgs<RecipesFragmentArgs>()
 
     private var _binding: FragmentRecipesBinding? = null
@@ -41,12 +46,14 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private lateinit var networkListener: NetworkListener
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,6 +70,8 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         recipesViewModel.readBackOnline.observe(viewLifecycleOwner, {
             recipesViewModel.backOnline = it
         })
+
+        Log.d("Meal Type", mealType)
 
 
         lifecycleScope.launch {
@@ -102,6 +111,8 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         val searchView = search.actionView as? SearchView
         searchView?.isSubmitButtonEnabled = true
         searchView?.setOnQueryTextListener(this)
+        binding.results.text = "Showing results from ${mealType}."
+
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
