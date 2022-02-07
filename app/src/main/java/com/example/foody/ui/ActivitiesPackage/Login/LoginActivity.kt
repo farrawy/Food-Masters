@@ -1,5 +1,7 @@
 package com.example.foody.ui.ActivitiesPackage.Login
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import de.hdodenhof.circleimageview.CircleImageView
@@ -31,10 +34,11 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var edtEmail: EditText
     private lateinit var edtPassword: EditText
     private lateinit var btnlogin: Button
-    private lateinit var btnsignup:Button
-    private lateinit var btnlogin2:Button
+    private lateinit var btnsignup: Button
+    private lateinit var btnlogin2: Button
     private lateinit var mAuth: FirebaseAuth
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.WelcomeActivityStyle)
@@ -49,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        mAuth= FirebaseAuth.getInstance()
+        mAuth = FirebaseAuth.getInstance()
 
         edtEmail = findViewById(R.id.email_login)
         edtPassword = findViewById(R.id.password_login)
@@ -60,20 +64,21 @@ class LoginActivity : AppCompatActivity() {
         val forget_passowrd = findViewById<TextView>(R.id.Forget_password_login)
 
         val google_signup = findViewById<CircleImageView>(R.id.google_image)
-        google_signup.setOnClickListener{
+        google_signup.setOnClickListener {
             logingoogle()
         }
 
         forget_passowrd.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Forgot Password")
-            val view = layoutInflater.inflate(R.layout.dialog_forgot_password,null)
+            val view = layoutInflater.inflate(R.layout.dialog_forgot_password, null)
             val username = view.findViewById<EditText>(R.id.et_username)
             builder.setView(view)
-            builder.setPositiveButton("Reset",DialogInterface.OnClickListener { _, _ ->
+            builder.setPositiveButton("Reset", DialogInterface.OnClickListener { _, _ ->
                 forgot_password(username)
+                Toast.makeText(this, "Password Reset Successful. Please check your email.", Toast.LENGTH_LONG).show()
             })
-            builder.setNegativeButton("close",DialogInterface.OnClickListener { _, _ ->  })
+            builder.setNegativeButton("close", DialogInterface.OnClickListener { _, _ -> })
             builder.show()
 
 
@@ -83,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
 
-            login(email,password);
+            login(email, password);
         }
         btnsignup.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -96,51 +101,59 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
         Not_a_member_login.setOnClickListener {
-            val intent= Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
             finish()
 
         }
 
 
-
     }
-    private fun forgot_password(username:EditText){
-        if (username.text.toString().isEmpty()){
+
+    private fun forgot_password(username: EditText) {
+        if (username.text.toString().isEmpty()) {
             return
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(username.text.toString()).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(username.text.toString()).matches()) {
             return
         }
         mAuth.sendPasswordResetEmail(username.text.toString())
-            .addOnCompleteListener{ task ->
-                if (task.isSuccessful){
-                    Toast.makeText(this,"Email sent",Toast.LENGTH_SHORT).show()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Email sent", Toast.LENGTH_SHORT).show()
 
-                }
-                else{
-                    Toast.makeText(this,"Email not registered",Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Email not registered", Toast.LENGTH_SHORT).show()
                 }
             }
 
     }
 
-    private fun login(email: String,password :String){
+    private fun login(email: String, password: String) {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent)
-                    Toast.makeText(this@LoginActivity,"Logging  in to your Account", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Logging  in to your Account",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
                 } else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(this@LoginActivity, "Invalid Email or Password", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Invalid Email or Password",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
     }
+
     private fun logingoogle() {
         val signUpIntent = googleSignInClient.signInIntent
         startActivityForResult(signUpIntent, RC_SIGN_IN)
@@ -152,7 +165,7 @@ class LoginActivity : AppCompatActivity() {
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             val exception = task.exception
-            if (task.isSuccessful){
+            if (task.isSuccessful) {
                 try {
                     // Google Sign In was successful, authenticate with Firebase
                     val account = task.getResult(ApiException::class.java)!!
@@ -163,7 +176,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.w("LoginActivity", "Google sign in failed", e)
                 }
 
-            }else{
+            } else {
                 Log.w("LoginActivity", exception.toString())
 
             }
@@ -178,7 +191,7 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("LoginActivity", "signInWithCredential:success")
-                    val intent = Intent(this,MainActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
 

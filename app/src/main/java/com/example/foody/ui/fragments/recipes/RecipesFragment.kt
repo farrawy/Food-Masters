@@ -71,7 +71,8 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
             recipesViewModel.backOnline = it
         })
 
-        Log.d("Meal Type", mealType)
+//        Log.d("Meal Type", mealType)
+//        binding.results.text = "Showing results from ${mealType}."
 
 
         lifecycleScope.launch {
@@ -102,6 +103,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         binding.recyclerview.adapter = mAdapter
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
         showShimmerEffect()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -111,7 +113,6 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         val searchView = search.actionView as? SearchView
         searchView?.isSubmitButtonEnabled = true
         searchView?.setOnQueryTextListener(this)
-        binding.results.text = "Showing results from ${mealType}."
 
     }
 

@@ -4,12 +4,17 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
+import com.example.foody.data.MealAndDietType
 import com.example.foody.data.Repository
 import com.example.foody.data.database.entities.FavoritesEntity
 import com.example.foody.data.database.entities.RecipesEntity
 import com.example.foody.models.FoodRecipe
+import com.example.foody.util.Constants.Companion.DEFAULT_MEAL_TYPE
+import com.example.foody.util.Constants.Companion.PREFERENCES_MEAL_TYPE
+import com.example.foody.util.Constants.Companion.QUERY_TYPE
 import com.example.foody.util.NetworkResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,21 +35,25 @@ class MainViewModel @ViewModelInject constructor(
     private fun insertRecipes(recipesEntity: RecipesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertRecipes(recipesEntity)
+            Log.d("insertRecipes", PREFERENCES_MEAL_TYPE)
         }
 
     fun insertFavoriteRecipe(favoritesEntity: FavoritesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertFavoriteRecipes(favoritesEntity)
+            Log.d("insertFavoriteRecipes", PREFERENCES_MEAL_TYPE)
         }
 
     fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.deleteFavoriteRecipe(favoritesEntity)
+            Log.d("deleteFavoriteRecipe", PREFERENCES_MEAL_TYPE)
         }
 
     fun deleteAllFavoriteRecipes() =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.deleteAllFavoriteRecipes()
+            Log.d("deleteAllFavoriteRecipes", PREFERENCES_MEAL_TYPE)
         }
 
     /** RETROFIT **/
@@ -53,10 +62,12 @@ class MainViewModel @ViewModelInject constructor(
 
     fun getRecipes(queries: Map<String, String>) = viewModelScope.launch {
         getRecipesSafeCall(queries)
+        Log.d("getRecipes", PREFERENCES_MEAL_TYPE)
     }
 
     fun searchRecipes(searchQuery: Map<String, String>) = viewModelScope.launch {
         searchRecipesSafeCall(searchQuery)
+        Log.d("searchRecipes", PREFERENCES_MEAL_TYPE)
     }
 
 

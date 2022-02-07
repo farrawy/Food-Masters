@@ -43,6 +43,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
             dietTypeChip = value.selectedDietType
             updateChip(value.selectedMealTypeId, mView.mealType_chipGroup)
             updateChip(value.selectedDietTypeId, mView.dietType_chipGroup)
+            Log.d("Meal Type", mealTypeChip)
         })
 
         // setOnCheckedChangeListener for meal type group
@@ -77,7 +78,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
         return mView
     }
     
-    private fun updateChip(chipId: Int, chipGroup: ChipGroup) {
+    fun updateChip(chipId: Int, chipGroup: ChipGroup) {
         if(chipId != 0){
             try {
                 chipGroup.findViewById<Chip>(chipId).isChecked = true
