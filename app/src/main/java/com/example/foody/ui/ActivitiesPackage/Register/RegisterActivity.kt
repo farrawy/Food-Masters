@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.foody.R
 import com.example.foody.ui.ActivitiesPackage.Login.LoginActivity
 import com.example.foody.ui.MainActivity
+import com.example.foody.user.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -20,8 +21,8 @@ import com.google.firebase.auth.GoogleAuthProvider
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_register.*
 import com.google.firebase.auth.OAuthProvider
-
-
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -36,6 +37,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var btnlogin: Button
     private lateinit var mAuth: FirebaseAuth
     private lateinit var edtname: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.WelcomeActivityStyle)
@@ -111,6 +113,7 @@ class RegisterActivity : AppCompatActivity() {
                     val intent = Intent(this@RegisterActivity, MainActivity::class.java)
                     startActivity(intent)
                     Toast.makeText(this@RegisterActivity,"Registering your account", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity,"You can now use you account", Toast.LENGTH_SHORT).show()
 
                 } else {
                     Toast.makeText(this@RegisterActivity, "Password should be at least 8 characters ",Toast.LENGTH_SHORT).show()
