@@ -10,6 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,10 +25,10 @@
             android:layout_below="@+id/editinfo"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="70dp"
             app:srcCompat="@drawable/profilepic"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription,ImageContrastCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -119,7 +121,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="31dp"
                     android:layout_marginBottom="22dp"
-                    android:backgroundTint="#FFFFFF"
+                    android:backgroundTint="@color/green"
                     android:text="View"
                     android:textColor="#000000" />
 
@@ -287,6 +289,34 @@
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="82dp"
+            android:layout_toEndOf="@+id/textView6"
+            android:background="@drawable/button"
+            android:text="Log out" />
+
+        <EditText
+            android:id="@+id/Email_Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-47dp"
+            android:layout_marginTop="235dp"
+            android:layout_marginEnd="-58dp"
+            android:ems="10"
+            android:hint="               Email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp" />
 
 
     </RelativeLayout>

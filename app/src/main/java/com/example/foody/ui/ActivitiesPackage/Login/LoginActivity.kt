@@ -1,9 +1,11 @@
 package com.example.foody.ui.ActivitiesPackage.Login
 
+import android.app.ProgressDialog
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
 import android.widget.Button
@@ -12,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.foody.R
+import com.example.foody.databinding.ActivityLoginBinding
 import com.example.foody.ui.ActivitiesPackage.Register.RegisterActivity
 import com.example.foody.ui.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -27,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var binding: ActivityLoginBinding
     private var RC_SIGN_IN = 999
     private lateinit var edtEmail: EditText
     private lateinit var edtPassword: EditText
@@ -34,11 +38,13 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var btnsignup:Button
     private lateinit var btnlogin2:Button
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var progressDialog : ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setTheme(R.style.AppTheme)
-        setContentView(R.layout.activity_login)
+        setContentView(binding.root)
         val hide = supportActionBar?.hide()
 
 
@@ -56,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
         btnlogin = findViewById(R.id.login_button)
         btnsignup = findViewById(R.id.signup_button_login)
         btnlogin2 = findViewById(R.id.login_button_login)
+        //checkIfuserIsUserisLogged()
 
         val forget_passowrd = findViewById<TextView>(R.id.Forget_password_login)
 
@@ -83,6 +90,8 @@ class LoginActivity : AppCompatActivity() {
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
 
+
+
             login(email,password);
         }
         btnsignup.setOnClickListener {
@@ -105,6 +114,13 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+    private fun checkIfuserIsUserisLogged(){
+        if (mAuth.currentUser !=null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+    }
+
     private fun forgot_password(username:EditText){
         if (username.text.toString().isEmpty()){
             return
@@ -126,19 +142,35 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(email: String,password :String){
-        mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    startActivity(intent)
-                    Toast.makeText(this@LoginActivity,"Logging  in to your Account", Toast.LENGTH_SHORT).show()
+        if (email.isNotEmpty()&&password.isNotEmpty()) {
 
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Toast.makeText(this@LoginActivity, "Invalid Email or Password", Toast.LENGTH_SHORT).show()
+            mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        startActivity(intent)
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Logging  in to your Account",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Invalid Email or Password",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
-            }
+        }
+        else{
+            Toast.makeText(this,
+                "Email and password cannot be empty",
+                Toast.LENGTH_SHORT).show()
+        }
 
     }
     private fun logingoogle() {

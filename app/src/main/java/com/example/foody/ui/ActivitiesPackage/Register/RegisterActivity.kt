@@ -3,7 +3,10 @@ package com.example.foody.ui.ActivitiesPackage.Register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
+import android.util.Patterns
+import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -11,8 +14,11 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.foody.R
 import com.example.foody.databinding.ActivityMainBinding
+import com.example.foody.databinding.ActivityRegisterBinding
 import com.example.foody.ui.ActivitiesPackage.Login.LoginActivity
 import com.example.foody.ui.MainActivity
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -30,18 +36,16 @@ class RegisterActivity : AppCompatActivity() {
 
 
     private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var callbackMainBinding: ActivityMainBinding
-    private lateinit var edtEmail: EditText
+   private lateinit var binding: ActivityRegisterBinding
     private var RC_SIGN_IN = 999
-    private lateinit var edtPassword: EditText
     private lateinit var btnsignup2: Button
     private lateinit var btnlogin: Button
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var edtname: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         setTheme(R.style.AppTheme)
-        setContentView(R.layout.activity_register)
+        setContentView(binding.root)
         supportActionBar?.hide()
 
 
@@ -52,28 +56,25 @@ class RegisterActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-
-
-
-
         mAuth= FirebaseAuth.getInstance()
-
-
-        edtname=findViewById(R.id.Name_register)
-        edtEmail = findViewById(R.id.email_register)
-        edtPassword = findViewById(R.id.password_register)
         btnsignup2 = findViewById(R.id.signup_button_signup)
         btnlogin = findViewById(R.id.login_button_signup)
 
+       // checkIfuserIsUserisLogged()
 
 
-        val sign_up_btn = findViewById<Button>(R.id.signup_button)
+
+
         val register_login_textView = findViewById<TextView>(R.id.register_login_textView)
         val google_signup = findViewById<CircleImageView>(R.id.google_image)
         val facebook_signup = findViewById<CircleImageView>(R.id.facebook_image)
         val twitter_signup = findViewById<CircleImageView>(R.id.twitter_image)
 
-        
+
+
+
+
+
 
 
 
@@ -82,12 +83,14 @@ class RegisterActivity : AppCompatActivity() {
             signup2()
         }
 
-        sign_up_btn.setOnClickListener {
-            val name = edtname.text.toString()
-            val email = edtEmail.text.toString()
-            val password = edtPassword.text.toString()
 
-            signup(email,password,name)
+        binding.signupButton.setOnClickListener {
+            registeruser()
+
+
+
+
+
         }
 
         register_login_textView.setOnClickListener{
@@ -107,22 +110,55 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
     }
+    private fun checkIfuserIsUserisLogged(){
+        if (mAuth.currentUser !=null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+    }
 
-    private fun signup(email :String,password:String,name:String){
-        mAuth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val intent = Intent(this@RegisterActivity, MainActivity::class.java)
-                    startActivity(intent)
-                    Toast.makeText(this@RegisterActivity,"Registering your account", Toast.LENGTH_SHORT).show()
+    private fun registeruser(){
+        val name = binding.NameRegister.text.toString()
+        val email = binding.emailRegister.text.toString()
+        val password = binding.passwordRegister.text.toString()
 
-                } else {
-                    Toast.makeText(this@RegisterActivity, "Password should be at least 8 characters ",Toast.LENGTH_SHORT).show()
+        if(name.isNotEmpty()&&email.isNotEmpty()&&password.isNotEmpty()){
+            mAuth.createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener(RegisterActivity()) { task ->
 
+                    if(task.isSuccessful){
+                        Toast.makeText(
+                            this,"User added Successfully",
+                            Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this,MainActivity::class.java))
+                        finish()
+                    }
+                    else{
+
+                        Toast.makeText(
+                            this,task.exception!!.message,
+                            Toast.LENGTH_SHORT).show()
+                    }
 
                 }
-            }
+
+        }
+        else{
+
+            Toast.makeText(
+                this,"Name , Email and password cannot be empty",
+                Toast.LENGTH_SHORT).show()
+        }
+
+
+
+
+
+
+
     }
+
+
 
     private fun signup2() {
         val signUpIntent = googleSignInClient.signInIntent
@@ -172,6 +208,8 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
     }
+
+
 
 
 }
